@@ -17,13 +17,15 @@
 <div id="DivAlignCSV">
 Separate by: 
 <select id="AlignmentSeparator">
-	<option value="," selected="selected">comma</option>
 	<!-- CAUTION: 
 	JavaScript will not understand backslashed t as Tab in option value 
 	Replaceing with ampersand hash 9 did the trick.
 	TextArea text was successfully seperated by tab entries.
 	-->
-	<option value="&#9">tab</option>
+	<option value="&#9" selected="selected">tab</option>
+	<option value=",">comma</option>
+	<option value=";">semicolon</option>
+	<option value=" ">space</option>
 	<option value="=">equal</option>
 </select>
 &emsp;
@@ -31,6 +33,7 @@ Justify to:
 <select id="JustifyTo">
 	<option value="right" selected="selected">right</option>
 	<option value="left">left</option>
+	<option value="auto">auto</option>
 </select>
 &emsp;
 <button type="button" onclick=AlignCSV()>
@@ -50,7 +53,7 @@ CSV To Table
 	Escape For
 	<select id="EscapeFor">
 		<option value="VBS-DoubleQuotes">VBScript - Escape double quotes</option>
-		<option value="XML">XML - Escape specual characters</option>
+		<option value="XML">XML - Escape special characters</option>
 		<option value="RegExp-Parentheses">RegExp - Escape Parentheses</option>
 		<option value="RegExp-Brackets">RegExp - Escape Brackets</option>
 		<option value="RegExp-Digits">RegExp - Group Integers</option>

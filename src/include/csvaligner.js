@@ -94,16 +94,26 @@ function AlignCSV(){
 	{
 		for (j = 0; j < column_count; j++)
 		{
+			// left justified regardless of the value type
 			if (justified_to == "left"){
 				str_out += sep_out + rows[i][j].padEnd(column_widths[j], padding_char);	
+			// right justified regardless of the vale type
 			}else if(justified_to == "right"){
 				str_out += sep_out + rows[i][j].padStart(column_widths[j], padding_char);	
+			// auto detect which way to be justified
+			}else if(justified_to == "auto"){
+				// left justified if the value is not a number
+				if (isNaN(rows[i][j])){
+					str_out += sep_out + rows[i][j].padEnd(column_widths[j], padding_char);	
+				// right justified if the value is a number
+				} else {
+					str_out += sep_out + rows[i][j].padStart(column_widths[j], padding_char);
+				}
 			}
-			
 		}
+		// add the closing separator and new line
 		str_out += sep_out + "\n";
 	}
-
 	// write to output text field.
 	document.getElementById("OutputField").value = str_out;
 }
