@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ASCII Art</title>
+<link rel="stylesheet" href="./include/style.css">
+<script src="./include/csvaligner.js"></script>
+<script src="./include/boxing.js"></script>
+<script src="./include/escaper.js"></script>
+<script src="./include/randomascii.js"></script>
+</head>
+<body>
+
+<!--- input -->
+<textarea id="InputField"></textarea>
+
+<!--- CSV Aligner -->
+<div id="DivAlignCSV">
+Separate by: 
+<select id="AlignmentSeparator">
+	<option value="," selected="selected">comma</option>
+	<!-- CAUTION: 
+	JavaScript will not understand backslashed t as Tab in option value 
+	Replaceing with ampersand hash 9 did the trick.
+	TextArea text was successfully seperated by tab entries.
+	-->
+	<option value="&#9">tab</option>
+	<option value="=">equal</option>
+</select>
+&emsp;
+Justify to:
+<select id="JustifyTo">
+	<option value="right" selected="selected">right</option>
+	<option value="left">left</option>
+</select>
+&emsp;
+<button type="button" onclick=AlignCSV()>
+CSV To Table
+</button>
+</div>
+
+<!--- Boxing -->
+<div id="DivBoxMsg">
+	<button type="button" onclick=BoxMsg()>
+	Box Message
+	</button>
+</div>
+
+<!--- Escaping -->
+<div id="Escsg">
+	Escape For
+	<select id="EscapeFor">
+		<option value="VBS-DoubleQuotes">VBScript - Escape double quotes</option>
+		<option value="XML">XML - Escape specual characters</option>
+		<option value="RegExp-Parentheses">RegExp - Escape Parentheses</option>
+		<option value="RegExp-Brackets">RegExp - Escape Brackets</option>
+		<option value="RegExp-Digits">RegExp - Group Integers</option>
+	</select>
+	&emsp;
+
+	<button type="button" onclick=EscChr()>
+	Escape
+	</button>
+</div>
+
+<!--- Random Ascii -->
+<div id="RndAsc">
+	Upper: <input type="checkbox" id="UpperCase">&ensp;
+	Lower: <input type="checkbox" id="LowerCase">&ensp;
+	Number: <input type="checkbox" id="Numbers">&ensp;
+	Length: <input type="number" id="TotalLength" min="1" max="255" value="50">
+	<button type="button" onclick=RandomAscii()>Random</button>
+</div>
+
+<!--- output -->
+<textarea id="OutputField"></textarea>
+</body>
+</html>

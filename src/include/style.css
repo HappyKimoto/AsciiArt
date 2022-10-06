@@ -1,0 +1,31 @@
+:root {
+  --default_width: 1000px;
+}
+
+/* dark theme */
+body , textarea{
+	background-color: black;
+	color: white;}
+
+/* table */
+table, th, td {
+	border-collapse: collapse; 
+	border: 1px solid black;
+	font-family: "Lucida Console", "Courier New", monospace;
+	}
+td {text-align: right;}
+
+div{
+	width: var(--default_width);
+	/* border:1px solid white; */
+	padding: 10px;
+}
+
+/* text area */
+textarea {
+	width: var(--default_width);
+	height: 300px;
+	white-space: pre;
+	overflow-wrap: normal;
+	overflow-x: scroll;
+}
