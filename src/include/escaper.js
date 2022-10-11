@@ -44,9 +44,6 @@ function EscChr(){
 			txt_out = txt_out.replaceAll("[", "\\[");
 			txt_out = txt_out.replaceAll("]", "\\]");
 			break;
-		case "RegExp-Digits":
-			txt_out = txt_out.replaceAll(/\d+/g, "(\\d+)");
-			break;
 	  }
 
 	// write to output text field.
