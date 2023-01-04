@@ -33,3 +33,21 @@ function BoxMsg(){
 	document.getElementById("OutputField").value = str_out;
 	
 }
+
+function TrimLines(){
+	let str_out = "";
+
+	// read lines from input text area
+	let lines = document.getElementById("InputField").value.replace(/\t/g, "    ").split("\n");
+
+	// loop lines
+	for (let i = 0; i < lines.length; i++){
+		// trim each line and update the output
+		console.log(lines[i])
+		str_out += lines[i].trim() + "\n";
+	}
+
+	// write to output text field.
+	document.getElementById("OutputField").value = str_out;
+	
+}
